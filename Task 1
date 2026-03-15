@@ -1,0 +1,87 @@
+tasks = []
+
+while True:
+    print("\n--- TO-DO LIST MENU ---")
+    print("1. View Tasks")
+    print("2. Add Task")
+    print("3. Update Task")
+    print("4. Delete Task")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        if len(tasks) == 0:
+            print("No tasks available.")
+        else:
+            print("\nYour Tasks:")
+            for i in range(len(tasks)):
+                print(i+1, ".", tasks[i])
+
+    elif choice == '2':
+        task = input("Enter a new task: ")
+        tasks.append(task)
+        print("Task added successfully!")
+
+    elif choice == '3':
+        for i in range(len(tasks)):
+            print(i+1, ".", tasks[i])
+        num = int(input("Enter task number to update: "))
+        if num <= len(tasks):
+            new_task = input("Enter new task: ")
+            tasks[num-1] = new_task
+            print("Task updated successfully!")
+        else:
+            print("Invalid task number")
+
+    elif choice == '4':
+        for i in range(len(tasks)):
+            print(i+1, ".", tasks[i])
+        num = int(input("Enter task number to delete: "))
+        if num <= len(tasks):
+            tasks.pop(num-1)
+            print("Task deleted successfully!")
+        else:
+            print("Invalid task number")
+
+    elif choice == '5':
+        print("Exiting program...")
+        break
+
+    else:
+        print("Invalid choice!")
+
+output 
+1. View Tasks
+2. Add Task
+3. Update Task
+4. Delete Task
+5. Exit
+Enter your choice: 2
+
+Enter a new task: Complete Python assignment
+Task added successfully!
+1. View Tasks
+2. Add Task
+3. Update Task
+4. Delete Task
+5. Exit
+Enter your choice: 2
+
+Enter a new task: Study for exam
+Task added successfully!
+Enter your choice: 1
+
+Your Tasks:
+1. Complete Python assignment
+2. Study for exam
+Enter your choice: 4
+1. Complete Python assignment
+2. Study for exam
+Enter task number to delete: 1
+
+Task deleted successfully!
+Enter your choice: 1
+
+Your Tasks:
+1. Study for exam
